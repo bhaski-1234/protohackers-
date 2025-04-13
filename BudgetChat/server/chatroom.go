@@ -16,7 +16,7 @@ func NewChatRoom() *ChatRoom {
 	}
 }
 
-// Add to chatroom.go
+//Add user if does not exisis
 func (cr *ChatRoom) AddUserIfNotExists(user *User) bool {
 	cr.mutex.Lock()
 	defer cr.mutex.Unlock()
