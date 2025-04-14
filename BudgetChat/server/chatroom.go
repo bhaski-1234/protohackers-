@@ -40,7 +40,7 @@ func (cr *ChatRoom) GetCurrentUsersList(excludeUser string) string {
 	defer cr.mutex.RUnlock()
 	users := make([]string, 0, len(cr.users))
 	for username := range cr.users {
-		if username == excludeUser {
+		if username != excludeUser {
 			users = append(users, username)
 		}
 	}

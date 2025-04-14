@@ -76,7 +76,7 @@ func (s *ChatServer) handleConnection(conn net.Conn) {
 			break
 		}
 		message = strings.TrimSpace(message)
-		s.broadCastMessageExceptClient(s.chatRoom, fmt.Sprintf("* %s has left the room\n", username), username)
+		s.broadCastMessageExceptClient(s.chatRoom, fmt.Sprintf("[%s] %s\n", username, message), username)
 	}
 
 	//user disconnected
